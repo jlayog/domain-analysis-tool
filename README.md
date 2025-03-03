@@ -2,6 +2,9 @@
 
 Welcome to the Domain Analysis Tool project! This project is built using Next.js 14, React, TypeScript, and JSX. This README will guide you through the setup and usage of the project.
 
+[recording.webm](https://github.com/user-attachments/assets/294c7637-1c19-4a53-8c4e-9f1e177f594c)
+
+
 ## Table of Contents
 
 - [Introduction](#introduction)
