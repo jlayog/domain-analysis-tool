@@ -1,0 +1,263 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cardContainer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+
+}
+
+.cardHeader,
+.cardFooter {
+    padding: 1.5rem;
+    width: 100%;
+    color: #0021a5;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "Gentona Book", Arial, sans-serif;
+    justify-content: space-between;
+}
+
+.cardHeader h2 {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    white-space: nowrap;
+    color: #0021a5;
+    font-style: normal;
+    padding: 0 0 20px;
+    text-wrap: wrap;
+}
+
+.cardFooter span {
+    font-weight: 400;
+}
+
+.cardLink {
+    color: #fff;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 45%;
+}
+
+.cardContent {
+    flex-grow: 1;
+    /* Content needs to grow and fill the space, otherwise white bar appears under image */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cardImage {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.pageViews,
+.pageLink,
+.keepOrDelete {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: 'Gentona Medium', Arial, sans-serif;
+    color: #0021a5;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 1400px) {
+    .pageLink a {
+        display: inline-block;
+        width: 550px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        vertical-align: bottom;
+    }
+    .pageLink {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .pageLink a {
+        display: inline-block;
+        width: 400px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        vertical-align: bottom;
+    }
+    
+    .pageLink {
+        display: flex;
+    }
+
+}
+
+.keepOrDelete {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.keepOrDelete label {
+    margin-right: 15px;
+}
+
+.keepOrDelete input {
+    margin-right: 50px;
+}
+
+.pageViews span,
+.pageLink span {
+    text-transform: none;
+    font-family: 'Gentona Book', Arial, sans-serif;
+}
+
+.pageCardMiddle {
+    display: flex;
+    padding: 10px 30px;
+}
+
+.pageScreenshot {
+    max-width: 50%;
+}
+
+.pageCardMiddle .right {
+    padding-left: 30px;
+}
+
+
+@media (min-width: 1400px) {
+    .pageScreenshot {
+        width: 100%;
+    }
+
+    .keepOrDelete {
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .pageCardMiddle .right {
+        width: 100%;
+    }
+}
+
+.pageCardMiddle select,
+.notes textarea {
+    height: 48px;
+    width: 100%;
+    border: 1px solid #CFCFCF;
+    border-radius: 8px;
+    font-family: 'Gentona Book', Arial, sans-serif;
+    font-size: 20px;
+    padding-left: 5px;
+    color: #616161;
+    margin-bottom: 20px;
+}
+
+.notes {
+    margin: 0 30px 30px;
+}
+
+.notes textarea {
+    height: 100px;
+    padding: 10px;
+    resize: none;
+}
+
+.pageScreenshot {
+    overflow: hidden;
+    /* margin: 15px auto; */
+    max-width: 200px;
+    height: 200px;
+}
+
+.pageScreenshot iframe {
+    border: 0px none;
+    margin-right: 0px;
+    height: 1200px;
+    margin-top: 0;
+    width: 1100px;
+    zoom: 20%;
+    pointer-events: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 1s ease-in;
+    opacity: 1;
+}
+
+.pageScreenshot {
+    position: relative;
+}
+
+.loadingOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    /* Ensures it appears above iframe */
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,83 @@
+.paginationContainer {
+    margin: 50px auto;
+}
+
+.pagination {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    color: #848484;
+}
+.pagination button {
+    background-color: unset;
+    font-family: 'Gentona Light', Arial, sans-serif;
+}
+
+.pagination .pageNumber,
+.pagination .prev,
+.pagination .next,
+.pagination .ellipses {
+    width: 32px;
+    height: 32px;
+    align-content: center;
+    text-align: center;
+    margin: 20px;
+    cursor:pointer;
+    font-size:16px;
+    color:#848484;
+}
+
+.pagination .prev,
+.pagination .next {
+    width: 32px;
+    height: 48px;
+    font-size: 32px;
+    border:none;
+}
+.pagination button[disabled] {
+    cursor:unset;
+}
+.pagination .pageNumber {
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+    border: 1px solid var(--brand-blue-light);
+}
+
+.pagination .selected {
+    color: white;
+    background: var(--brand-blue);
+}
+
+.directPageForm {
+    display: flex;
+    align-items: center;
+}
+.directPageForm label {
+    margin-right: 10px;
+    color: var(--text-gray);
+}
+.directPageForm input {
+    width: 80px;
+    height: 32px;
+    border: 1px solid #CFCFCF;
+    border-radius: 8px;
+    font-family: 'Gentona Book', Arial, sans-serif;
+    font-size: 16px;
+    padding-left: 5px;
+    color: var(--text-gray);
+    margin-right: 15px;
+}
+
+.directPageForm button {
+    width: 50px;
+    height: 32px;
+    border: 1px solid #CFCFCF;
+    border-radius: 8px;
+    font-family: 'Gentona Book', Arial, sans-serif;
+    font-size: 16px;
+    background-color: var(--brand-blue);
+    color: white;
+    cursor: pointer;
+}

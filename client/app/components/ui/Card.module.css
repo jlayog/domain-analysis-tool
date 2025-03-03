@@ -1,0 +1,77 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    height: 425px; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+.cardContainer:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.cardHeader, .cardFooter {
+    background-color: #0021A5;
+    padding: 1.5rem;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "Gentona Book", Arial, sans-serif;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.cardHeader h2 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    white-space: wrap;
+}
+
+.cardHeader a:hover {
+    text-decoration: underline;
+}
+
+.cardFooter span {
+    font-weight: 400;
+}
+
+.cardLink {
+    color: #fff;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 45%; 
+}
+
+.cardContent {
+    flex-grow: 1; /* Content needs to grow and fill the space, otherwise white bar appears under image */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cardImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0; 
+}
+

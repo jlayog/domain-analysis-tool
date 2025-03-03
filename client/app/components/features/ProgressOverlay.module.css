@@ -1,0 +1,171 @@
+/* styles/ProgressOverlay.module.css */
+.overlay {
+    display: flex;
+    align-items: center;
+    gap: 15rem;
+    position: fixed;
+    margin-left: auto;
+    top: 2rem;
+    right: 0;
+    height: 60px;
+    background: var(--brand-blue);
+    padding: 0 3rem;
+    z-index: 100;
+    color: white;
+}
+
+.progressContainer {
+    display: flex;
+}
+
+.progressBar progress {
+    background-color: #F36B16;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    line-height: 20px;
+}
+
+.progressBar progress[value] {
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; */
+    accent-color: var(--progress-orange);
+}
+
+.progressBar progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Progress styles for Firefox */
+.progressBar progress[value] {
+    --color: var(--progress-orange);
+    /* the progress color */
+    --background: white;
+    /* the background color */
+
+    border: none;
+    /* Firefox add a default border */
+    width: 230px;
+    height: 16px;
+    margin: 0 10px;
+    border-radius: 10em;
+    background: var(--background);
+}
+
+.progressBar progress[value]::-moz-progress-bar {
+    border-radius: 10em 0 0 10em;
+    background: var(--color);
+}
+
+/* Progress styles for Webkit */
+.progressBar progress[value] {
+    --color: var(--progress-orange);
+    /* the progress color */
+    --background: white;
+    /* the background color */
+
+    width: 230px;
+    margin: 0 10px;
+}
+
+.progressBar progress[value]::-webkit-progress-bar {
+    border-radius: 10em;
+    background: var(--background);
+}
+
+.progressBar progress[value]::-webkit-progress-value {
+    border-radius: 10em 0 0 10em;
+    background: var(--color);
+}
+
+.progressBar {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+.progressBar label {
+    font-size: 18px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-family: 'Gentona Medium', Arial, sans-serif;
+    color: white;
+}
+
+.progressContainer .percentLabel {
+    align-self: end;
+    margin-bottom: 14px;
+    color: white;
+    font-family: 'Gentona Light', Arial, sans-serif;
+    height: 5px;
+}
+
+button.save {
+    z-index: 11;
+    height: 70px;
+    width: 200px;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 0px;
+    max-height: none;
+    max-width: none;
+    text-align: center;
+    letter-spacing: 0px;
+    font-weight: 500;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 13px;
+    padding-right: 13px;
+    backdrop-filter: none;
+    filter: none;
+    transform-origin: 50% 50%;
+    opacity: 1;
+    transform: translate(0px, 0px);
+    visibility: visible;
+    border-radius: 0px;
+    position: relative;
+    font-family: 'Gentona Medium', Arial, sans-serif;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 70px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transition: all 0.3s;
+    border-top: none;
+    border-bottom: none;
+    border-color: rgba(255, 255, 255, 1);
+    background: #0021A5;
+}
+
+button.save::before {
+    transition: all 0.3s;
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 87%;
+    border-top: 1px solid #fff;
+    right: 0;
+    top: 0;
+}
+
+button.save::after {
+    transition: all 0.3s;
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 87%;
+    border-bottom: 1px solid #fff;
+    bottom: 0;
+    left: 0;
+}
+
+button.save:hover::before,
+button.save:hover::after {
+    width: 100%;
+}
